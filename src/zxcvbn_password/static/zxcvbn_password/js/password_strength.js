@@ -13,12 +13,12 @@ $(function($) {
             if( confirm_with && confirm_with == password_field.attr('id')) {
                 if( confirm_value && password ) {
                     if (confirm_value === password) {
-                        $(confirm_field).parent().find('.password_strength_info').addClass('hidden');
+                        $(confirm_field).parent().find('.password_strength_info').addClass('d-none');
                     } else {
-                        $(confirm_field).parent().find('.password_strength_info').removeClass('hidden');
+                        $(confirm_field).parent().find('.password_strength_info').removeClass('d-none');
                     }
                 } else {
-                    $(confirm_field).parent().find('.password_strength_info').addClass('hidden');
+                    $(confirm_field).parent().find('.password_strength_info').addClass('d-none');
                 }
             }
         });
@@ -43,23 +43,23 @@ $(function($) {
             var crack_time = result.crack_times_display.online_no_throttling_10_per_second;
 
             if (result.score < 1) {
-                password_strength_bar.removeClass('progress-bar-success progress-bar-warning').addClass('progress-bar-danger');
-                password_strength_info.find('.label').removeClass('hidden');
+                password_strength_bar.removeClass('bg-success bg-warning').addClass('bg-danger');
+                password_strength_info.find('.label').removeClass('d-none');
             } else if (result.score < min_score) {
-                password_strength_bar.removeClass('progress-bar-success progress-bar-danger').addClass('progress-bar-warning');
-                password_strength_info.find('.label').removeClass('hidden');
+                password_strength_bar.removeClass('bg-success bg-danger').addClass('bg-warning');
+                password_strength_info.find('.label').removeClass('d-none');
             } else {
-                password_strength_bar.removeClass('progress-bar-warning progress-bar-danger').addClass('progress-bar-success');
-                password_strength_info.find('.label').addClass('hidden');
+                password_strength_bar.removeClass('bg-warning bg-danger').addClass('bg-success');
+                password_strength_info.find('.label').addClass('d-none');
             }
 
             password_strength_bar.width( ((result.score+1)/5)*100 + '%' ).attr('aria-valuenow', result.score + 1);
             password_strength_info.find('.password_strength_time').html(crack_time);
-            password_strength_info.removeClass('hidden');
+            password_strength_info.removeClass('d-none');
         } else {
-            password_strength_bar.removeClass('progress-bar-success').addClass('progress-bar-warning');
+            password_strength_bar.removeClass('bg-success').addClass('bg-warning');
             password_strength_bar.width( '0%' ).attr('aria-valuenow', 0);
-            password_strength_info.addClass('hidden');
+            password_strength_info.addClass('d-none');
         }
         match_passwords($(this));
     });

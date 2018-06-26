@@ -26,7 +26,7 @@ class PasswordStrengthInput(PasswordInput):
         <div class="progress-bloc" style="margin-top: 10px;">
             <div class="progress" style="margin-bottom: 10px;">
                 <div class="progress-bar
-                            progress-bar-warning
+                            bg-warning
                             password_strength_bar"
                      role="progressbar"
                      aria-valuenow="0"
@@ -35,8 +35,8 @@ class PasswordStrengthInput(PasswordInput):
                      style="width: 0%%">
                 </div>
             </div>
-            <p class="text-muted password_strength_info hidden">
-                <span class="label label-danger">
+            <p class="text-muted password_strength_info d-none">
+                <span class="badge badge-danger">
                     {title}
                 </span>
                 <span style="margin-left:5px;">
@@ -82,9 +82,9 @@ class PasswordConfirmationInput(PasswordInput):
             self.attrs['data-confirm-with'] = 'id_%s' % self.confirm_with
 
         confirmation_markup = """
-        <div style="margin-top: 10px;" class="hidden password_strength_info">
+        <div style="margin-top: 10px;" class="d-none password_strength_info">
             <p class="text-muted">
-                <span class="label label-danger">
+                <span class="badge badge-danger">
                     %s
                 </span>
                 <span style="margin-left:5px;">%s</span>
