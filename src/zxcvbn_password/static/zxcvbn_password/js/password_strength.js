@@ -44,13 +44,13 @@ $(function($) {
 
             if (result.score < 1) {
                 password_strength_bar.removeClass('bg-success bg-warning').addClass('bg-danger');
-                password_strength_info.find('.label').removeClass('d-none');
+                password_strength_info.find('.badge').removeClass('d-none');
             } else if (result.score < min_score) {
                 password_strength_bar.removeClass('bg-success bg-danger').addClass('bg-warning');
-                password_strength_info.find('.label').removeClass('d-none');
+                password_strength_info.find('.badge').removeClass('d-none');
             } else {
                 password_strength_bar.removeClass('bg-warning bg-danger').addClass('bg-success');
-                password_strength_info.find('.label').addClass('d-none');
+                password_strength_info.find('.badge').addClass('d-none');
             }
 
             password_strength_bar.width( ((result.score+1)/5)*100 + '%' ).attr('aria-valuenow', result.score + 1);
