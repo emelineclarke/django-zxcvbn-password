@@ -28,7 +28,7 @@ def read(*names, **kwargs):
 
 setup(
     name='django-zxcvbn-password',
-    version='2.0.1',
+    version='2.0.3',
     license='ISC',
     description='Back-end and Front-end password validation with ZXCVBN.',
     long_description='%s\n%s' % (
@@ -67,7 +67,7 @@ setup(
         'django', 'zxcvbn', 'password',
     ],
     install_requires=[
-        'zxcvbn-python'
+        'zxcvbn'
     ],
     dependency_links=[
         # 'https://github.com/moreati/python-zxcvbn/tarball/master'
