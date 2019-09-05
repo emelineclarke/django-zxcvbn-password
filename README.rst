@@ -46,6 +46,8 @@ Django ZXCVBN Password
 
 .. end-badges
 
+**A fork of Pawamoy's package that supports Bootstrap 4.**
+
 Back-end and Front-end password validation with ZXCVBN.
 
 A combination of
